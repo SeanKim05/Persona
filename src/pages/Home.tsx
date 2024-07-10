@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import introImg from "@/assets/introImg.jpg";
+import "@/styles/animation.css"; // Make sure this path is correct
 
 export default function Home() {
   const [isBlur, setIsBlur] = useState(true);
-  const [text, setText] = useState("Persona");
+  const [isTextShown, setIsTextShown] = useState(false);
+
+  const fadeInText = "Persona";
 
   const scrollHandler = () => {
     if (window.scrollY > 400) {
@@ -22,39 +25,67 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    let timer: ReturnType<typeof setTimeout>;
+    let textTimer: ReturnType<typeof setTimeout>;
+
     if (!isBlur) {
-      timer = setTimeout(() => {
-        setText("Personal");
-      }, 1000);
+      textTimer = setTimeout(() => {
+        setIsTextShown(true);
+      }, 100);
     } else {
-      setText("Persona"); // Reset text when blur is reapplied
+      setIsTextShown(false);
     }
 
-    return () => clearTimeout(timer); // Clear timeout if component unmounts or isBlur changes
+    return () => {
+      clearTimeout(textTimer);
+    };
   }, [isBlur]);
 
   return (
-    <div style={{ fontFamily: "go" }} className="bg-black">
-      <div className="h-[700px]"></div>
+    <div style={{ fontFamily: "mj" }} className="bg-black">
+      {/* Slide 1 */}
+      <div className="flex justify-center items-center h-[700px] text-[120px] text-white">
+        <h1 className="">Persona</h1>
+      </div>
+      {/* Slide 2 */}
       <div className={`relative ${isBlur ? "blur-lg" : "blur-0"}`}>
         <img
           src={introImg}
           alt="Blurry"
           className="w-full h-screen"
           style={{
-            transition: "filter 1s ease-in-out",
+            transition: "filter 0.5s ease-in-out",
           }}
         />
         <div
           style={{ fontFamily: "mjBold" }}
-          className="absolute top-20 left-20 text-white text-[96px]"
+          className="absolute top-[10%] left-[12%] text-white"
         >
-          <h1 className="mt-14">{text}</h1>
-          <p style={{ fontFamily: "go" }} className="text-[22px]">
-            사회적으로 보여주기 위해 쓰는 가면을 벗고, <br />
-            지극히 사적인 나의 영역으로 가는 공간
-          </p>
+          <h1
+            className={`mt-14 text-[90px] ${
+              isTextShown && "animate-text-move"
+            }`}
+          >
+            {isTextShown ? (
+              <>
+                {fadeInText}
+                <span className="animate-letter-fade">l</span>
+              </>
+            ) : (
+              fadeInText
+            )}
+          </h1>
+
+          {isTextShown && (
+            <div
+              style={{ fontFamily: "go" }}
+              className={`text-[18px] animate-letter-fade animate-slide-up `}
+            >
+              <>
+                <p>사회적으로 보여주기 위해 쓰는 가면을 벗고,</p>
+                <p>지극히 사적인 개인의 영역으로 가는 공간 페르소나</p>
+              </>
+            </div>
+          )}
         </div>
       </div>
     </div>
