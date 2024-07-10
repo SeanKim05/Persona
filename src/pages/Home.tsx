@@ -39,7 +39,7 @@ export default function Home() {
       clearTimeout(textTimer);
     };
   }, [isBlur]);
-
+  console.log("a");
   return (
     <div style={{ fontFamily: "mj" }} className="bg-black">
       {/* Slide 1 */}
