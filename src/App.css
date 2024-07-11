@@ -16,3 +16,8 @@
   font-family: go;
   src: url("./assets/fonts/ChosunSg.TTF");
 }
+
+@font-face {
+  font-family: goBold;
+  src: url("./assets/fonts/ChosunKg.TTF");
+}
