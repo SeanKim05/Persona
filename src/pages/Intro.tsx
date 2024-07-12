@@ -1,26 +1,28 @@
 import { useEffect, useState, useRef } from "react";
 import introImg from "@/assets/introImg.jpg";
-import "@/styles/animation.css"; // Ensure the CSS path is correct
+import "@/styles/animation.css";
 import { useNavigate } from "react-router-dom";
 
-export default function Home() {
-  const [blurIntensity, setBlurIntensity] = useState(10); // Start with full blur
+export default function Intro() {
+  const [blurIntensity, setBlurIntensity] = useState(10);
   const [isTextShown, setIsTextShown] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false); //1회 이상 스크롤이 진행되면 에니매이션 작동 x
+
   const slideRef = useRef<HTMLDivElement>(null);
-  const [hasScrolled, setHasScrolled] = useState(false);
 
-  const fadeInText = "Persona";
+  const navigate = useNavigate();
 
+  //slide2 Blur처리
   const calculateBlur = () => {
     if (!slideRef.current) return;
-    const slideTop = slideRef.current.offsetTop;
-    const scrollDistance = Math.max(0, slideTop - window.scrollY);
-    const blur = Math.min(10, scrollDistance / 100); // Adjust the divisor to control the rate of blur change
+    const slideTop = slideRef.current.offsetTop; //ref된 요소의 윗지점
+    const scrollDistance = Math.max(0, slideTop - window.scrollY); //scroll 지점이 마이너스 값이 되는 것을 방지
+    const blur = Math.min(blurIntensity, scrollDistance / 100); // blur === 0일 떄 가장선명
     setBlurIntensity(blur);
   };
-
+  //스크롤 이동
   const scrollHandler = () => {
-    calculateBlur(); // Call calculateBlur on each scroll event to dynamically adjust the blur
+    calculateBlur();
     if (window.scrollY > 100 && !hasScrolled) {
       if (slideRef.current) {
         window.scrollTo({
@@ -43,8 +45,8 @@ export default function Home() {
 
   useEffect(() => {
     let textTimer: ReturnType<typeof setTimeout>;
-
-    if (blurIntensity < 0.1) {
+    // blur 처리가 제거 된 후 텍스트 생성
+    if (blurIntensity === 0) {
       textTimer = setTimeout(() => {
         setIsTextShown(true);
       }, 100);
@@ -56,8 +58,6 @@ export default function Home() {
       clearTimeout(textTimer);
     };
   }, [blurIntensity]);
-
-  const navigate = useNavigate();
 
   return (
     <div style={{ fontFamily: "mj" }} className="bg-black">
@@ -92,26 +92,22 @@ export default function Home() {
               isTextShown && "animate-text-move"
             }`}
           >
-            {isTextShown ? (
-              <>
-                {fadeInText}
-                <span className="animate-letter-fade">l</span>
-              </>
-            ) : (
-              fadeInText
-            )}
+            <>
+              Persona
+              {isTextShown && <span className="animate-letter-fade">l</span>}
+            </>
           </h1>
 
           {isTextShown && (
             <div
               style={{ fontFamily: "go" }}
-              className={`text-[18px] animate-letter-fade animate-slide-up`}
+              className={`text-[16px] animate-letter-fade animate-slide-up`}
             >
               <div>
                 <p>사회적으로 보여주기 위해 쓰는 가면을 벗고,</p>
                 <p>
-                  지극히 사적인{" "}
-                  <span style={{ fontFamily: "mj" }}>나의 영역으로</span> 가는
+                  지극히 사적인
+                  <span style={{ fontFamily: "mj" }}> 나의 영역으로</span> 가는
                   공간 페르소나
                 </p>
               </div>
@@ -124,7 +120,6 @@ export default function Home() {
             </div>
           )}
         </div>
-        <div id="my-section" />
       </div>
     </div>
   );
