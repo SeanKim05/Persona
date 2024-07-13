@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-import Intro from "../pages/Intro";
-import Home1 from "../pages/Home";
+import Intro from "@/pages/Intro";
+import Home1 from "@/pages/Home";
 
 export default function Router() {
   return (

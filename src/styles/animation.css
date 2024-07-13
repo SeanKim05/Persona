@@ -8,7 +8,7 @@
   }
 }
 
-@keyframes slideLeft {
+@keyframes slideLeft19px {
   0% {
     transform: translateX(0);
   }
@@ -17,7 +17,7 @@
   }
 }
 
-@keyframes slideUp {
+@keyframes slideUp20px {
   0% {
     transform: translateY(20px);
     opacity: 0;
@@ -38,9 +38,10 @@
     opacity: 0;
   }
 }
+
 /* className */
 .animate-text-move {
-  animation: slideLeft 1s forwards;
+  animation: slideLeft19px 1s forwards;
 }
 
 .animate-letter-fade {
@@ -49,9 +50,26 @@
 }
 
 .animate-slide-up {
-  animation: slideUp 1s forwards;
+  animation: slideUp20px 1s forwards;
 }
 
 .animate-blink {
   animation: blink 3s infinite;
+}
+
+/* nav */
+.nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  transition: all 0.3s;
+}
+
+.nav-open {
+  margin-left: 0;
+}
+
+.nav-closed {
+  margin-left: 72px; /* Adjusted to match the width of the NavBar */
 }

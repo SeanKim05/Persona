@@ -21,3 +21,11 @@
   font-family: goBold;
   src: url("./assets/fonts/ChosunKg.TTF");
 }
+
+/* customize CSS */
+.flexRowCenter {
+  @apply flex items-center justify-center;
+}
+.flexColumnCenter {
+  @apply flex flex-col items-center justify-center;
+}

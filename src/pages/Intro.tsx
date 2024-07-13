@@ -80,7 +80,7 @@ export default function Intro() {
           className="w-full h-screen"
           style={{
             filter: `blur(${blurIntensity}px)`,
-            transition: "filter 0.5s ease-in-out",
+            transition: "filter 0.8s ease-in-out",
           }}
         />
         <div
