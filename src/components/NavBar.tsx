@@ -18,9 +18,9 @@ function NavBar({ isNavOpen, toggleNav }: NavBarProps) {
       <nav className="mt-10">
         <ul className="text-black text-[20px]" style={{ fontFamily: "go" }}>
           <li className="p-[16px]">Home</li>
-          <li className="p-[16px]">About</li>
-          <li className="p-[16px]">Services</li>
-          <li className="p-[16px]">Contact</li>
+          <li className="p-[16px]">Me</li>
+          <li className="p-[16px]">Career</li>
+          <li className="p-[16px]">Gallery</li>
         </ul>
       </nav>
     </div>
