@@ -1,14 +1,15 @@
-// Home1.js
 import { useState } from "react";
-import NavBar from "@components/navBar";
+import NavBar from "@/components/NavBar";
 import { FaBars } from "react-icons/fa";
 
-export default function Home1() {
+export default function Home() {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
   };
+
+  const imageSrc = new URL("../assets/img/introImg2.jpg", import.meta.url).href;
 
   return (
     <div className="flex w-screen h-screen bg-black text-white">
@@ -19,15 +20,17 @@ export default function Home1() {
           onClick={toggleNav}
           className="p-[16px] text-white fixed top-0 left-0"
         >
-          <FaBars />
+          <FaBars size={24} />
         </button>
       )}
       <div
-        className={`flex justify-center items-center flex-grow transition-all duration-300 ${
+        style={{ fontFamily: "mj" }}
+        className={`flexRowCenter text-[62px] flex-grow transition-all duration-300 ${
           isNavOpen ? "ml-[300px]" : "ml-0"
         }`}
       >
-        Home1
+        <div></div>
+        <img className="w-[50%] h-[60%]" src={imageSrc} />
       </div>
     </div>
   );

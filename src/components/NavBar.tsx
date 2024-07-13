@@ -8,15 +8,15 @@ interface NavBarProps {
 function NavBar({ isNavOpen, toggleNav }: NavBarProps) {
   return (
     <div
-      className={`fixed top-0 left-0 h-full w-[300px] bg-gray-800 transition-transform transform ${
+      className={`fixed top-0 left-0 h-full w-[300px] bg-white transition-transform transform ${
         isNavOpen ? "translate-x-0" : "-translate-x-full"
       }`}
     >
-      <button onClick={toggleNav} className="p-4 text-white">
-        <IoClose />
+      <button onClick={toggleNav} className="p-[16px] text-black">
+        <IoClose size={24} />
       </button>
       <nav className="mt-10">
-        <ul>
+        <ul className="text-black text-[20px]" style={{ fontFamily: "go" }}>
           <li className="p-[16px]">Home</li>
           <li className="p-[16px]">About</li>
           <li className="p-[16px]">Services</li>

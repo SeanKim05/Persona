@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import introImg from "@/assets/introImg.jpg";
+import introImg from "@/assets/img/introImg.jpg";
 import "@/styles/animation.css";
 import { useNavigate } from "react-router-dom";
 
