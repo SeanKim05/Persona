@@ -40,6 +40,10 @@
 }
 
 /* className */
+.animate-page-fade {
+  animation: fadeIn 1s forwards;
+}
+
 .animate-text-move {
   animation: slideLeft19px 1s forwards;
 }

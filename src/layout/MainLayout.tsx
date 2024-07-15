@@ -12,7 +12,7 @@ export default function MainLayout() {
   };
 
   return (
-    <div className="flex w-screen h-screen bg-black text-white">
+    <div className=" bg-black text-white">
       {isNavOpen ? (
         <NavBar isNavOpen={isNavOpen} toggleNav={toggleNav} />
       ) : (

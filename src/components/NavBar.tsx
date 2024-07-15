@@ -1,14 +1,25 @@
 // NavBar.js
 import { IoClose } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
+
 interface NavBarProps {
   isNavOpen: boolean;
   toggleNav: () => void;
 }
 
 function NavBar({ isNavOpen, toggleNav }: NavBarProps) {
+  const navigate = useNavigate();
+
+  const navItems = [
+    { label: "Home", path: "main" },
+    { label: "Me", path: "" },
+    { label: "Career", path: "career" },
+    { label: "Gallery", path: "" },
+  ];
+
   return (
     <div
-      className={`fixed top-0 left-0 h-full w-[300px] bg-white transition-transform transform ${
+      className={`fixed top-0 left-0 h-screen w-[300px] bg-white transition-transform transform ${
         isNavOpen ? "translate-x-0" : "-translate-x-full"
       }`}
     >
@@ -16,11 +27,16 @@ function NavBar({ isNavOpen, toggleNav }: NavBarProps) {
         <IoClose size={24} />
       </button>
       <nav className="mt-10">
-        <ul className="text-black text-[20px]" style={{ fontFamily: "go" }}>
-          <li className="p-[16px]">Home</li>
-          <li className="p-[16px]">Me</li>
-          <li className="p-[16px]">Career</li>
-          <li className="p-[16px]">Gallery</li>
+        <ul className="text-black text-[26px]" style={{ fontFamily: "mj" }}>
+          {navItems.map((item, index) => (
+            <li
+              key={index}
+              onClick={() => item.path && navigate(item.path)}
+              className="p-[16px] hover:opacity-75 hover:underline cursor-pointer"
+            >
+              {item.label}
+            </li>
+          ))}
         </ul>
       </nav>
     </div>

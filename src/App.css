@@ -26,6 +26,6 @@
 .flexRowCenter {
   @apply flex items-center justify-center;
 }
-.flexColumnCenter {
+.flexColumn {
   @apply flex flex-col items-center justify-center;
 }
