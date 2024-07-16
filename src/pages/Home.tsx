@@ -47,26 +47,24 @@ export default function Home() {
 
   return (
     <>
-      <div className="flexColumn w-screen h-screen text-[18px]">
-        <div className="w-full pl-[25%] mb-[12px]">
-          {localImgArr[randIdx].desc}
-        </div>
+      <div className="flexColumn h-screen text-[18px]">
+        <div className="w-full mb-[12px]">{localImgArr[randIdx].desc}</div>
         <img
-          className="w-[50%] h-[60%]"
+          className="w-[100%] h-[60%]"
           src={imageSrc}
           style={{
             opacity: isImgVisible ? 1 : 0,
             transition: "opacity 0.5s ease-in-out",
           }}
         />
-        <div className="w-full flex justify-end pr-[25%] mt-[12px]">
+        <div className="w-full flex justify-end mt-[12px]">
           {localImgArr[randIdx].desc}
         </div>
       </div>
 
       <div
         style={{ backgroundImage: `url(${home})`, fontFamily: "mjBold" }}
-        className="relative flex items-center justify-center w-screen h-screen text-[80px]"
+        className="relative flex items-center justify-center w-full h-screen text-[80px]"
       >
         <div className="absolute">김사람</div>
         {words.map((word, index) => (

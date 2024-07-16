@@ -19,7 +19,7 @@ function NavBar({ isNavOpen, toggleNav }: NavBarProps) {
 
   return (
     <div
-      className={`fixed top-0 left-0 h-screen w-[300px] bg-white transition-transform transform ${
+      className={`fixed top-0 left-0 h-screen w-[300px] bg-white transition-transform transform z-50 ${
         isNavOpen ? "translate-x-0" : "-translate-x-full"
       }`}
     >
