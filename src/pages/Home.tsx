@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import home from "@assets/img/home.jpg";
+import { useSetRecoilState } from "recoil";
+import { cursorHovered } from "@/data/atoms/layout";
 
 export default function Home() {
   const [randIdx, setRandIdx] = useState(0);
   const [isImgVisible, setIsImgVisible] = useState(true);
+  const setCursorIsHover = useSetRecoilState(cursorHovered);
 
   const localImgArr = [
     { desc: "가나다", navTo: "" },
@@ -45,6 +48,14 @@ export default function Home() {
     { text: "도시적인", top: "90%", left: "50%" },
   ];
 
+  const handleMouseEnter = () => {
+    setCursorIsHover(true);
+  };
+
+  const handleMouseLeave = () => {
+    setCursorIsHover(false);
+  };
+
   return (
     <>
       <div className="flexColumn h-screen text-[18px]">
@@ -56,6 +67,8 @@ export default function Home() {
             opacity: isImgVisible ? 1 : 0,
             transition: "opacity 0.5s ease-in-out",
           }}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
         />
         <div className="w-full flex justify-end mt-[12px]">
           {localImgArr[randIdx].desc}
@@ -77,6 +90,8 @@ export default function Home() {
               left: word.left,
               transform: "translate(-50%, -50%)",
             }}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
           >
             {word.text}
           </span>

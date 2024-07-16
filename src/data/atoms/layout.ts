@@ -1,6 +1,6 @@
 import { atom } from "recoil";
 
-export const isCursorHovered = atom({
-  key: "isCursorHovered",
+export const cursorHovered = atom({
+  key: "cursorHovered",
   default: false,
 });

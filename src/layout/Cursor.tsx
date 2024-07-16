@@ -15,18 +15,24 @@ export default function Cursor({ isHovered }: { isHovered: boolean }) {
   }, []);
 
   return (
-    <>
+    <div
+      className="custom-cursor relative"
+      style={{
+        top: `${position.y}px`,
+        left: `${position.x}px`,
+      }}
+    >
       {isHovered && (
         <div
-          className="fixed pointer-events-none text-sm text-red-500"
           style={{
-            top: `${position.y + 10}px`,
-            left: `${position.x + 10}px`,
+            top: 24,
+            left: 24,
           }}
+          className="absolute pointer-events-none text-sm text-white"
         >
-          click
+          Click
         </div>
       )}
-    </>
+    </div>
   );
 }
