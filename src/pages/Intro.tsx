@@ -60,7 +60,9 @@ export default function Intro() {
   }, [blurIntensity]);
 
   return (
-    <div style={{ fontFamily: "mj" }} className="bg-black">
+    <div style={{ fontFamily: "mj", cursor: "default" }} className="bg-black">
+      {/* <Cursor isHovered={false} /> */}
+
       {/* Slide 1 */}
       <div className="flex flex-col justify-center items-center h-[700px] text-[120px] text-white opacity-90">
         <h1 className="absolute">Persona</h1>

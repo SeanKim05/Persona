@@ -40,7 +40,7 @@
 }
 
 /* className */
-.animate-page-fade {
+.animate-fade-in {
   animation: fadeIn 1s forwards;
 }
 
@@ -59,6 +59,13 @@
 
 .animate-blink {
   animation: blink 3s infinite;
+}
+
+.animate-op-up {
+  transition: opacity 0.3s ease;
+}
+.animate-op-up:hover {
+  opacity: 0.5;
 }
 
 /* nav */

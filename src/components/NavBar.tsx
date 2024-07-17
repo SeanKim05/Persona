@@ -23,7 +23,7 @@ function NavBar({ isNavOpen, toggleNav }: NavBarProps) {
         isNavOpen ? "translate-x-0" : "-translate-x-full"
       }`}
     >
-      <button onClick={toggleNav} className="p-[16px] text-black">
+      <button onClick={toggleNav} className="p-[16px] text-black cursor-none">
         <IoClose size={24} />
       </button>
       <nav className="mt-10">
@@ -32,7 +32,7 @@ function NavBar({ isNavOpen, toggleNav }: NavBarProps) {
             <li
               key={index}
               onClick={() => item.path && navigate(item.path)}
-              className="p-[16px] hover:opacity-75 hover:underline cursor-pointer"
+              className="flex p-[16px] hover:opacity-75 hover:underline"
             >
               {item.label}
             </li>

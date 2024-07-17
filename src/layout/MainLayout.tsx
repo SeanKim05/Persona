@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import NavBar from "@/components/NavBar";
 import { FaBars } from "react-icons/fa";
 import { Outlet } from "react-router-dom";
@@ -15,6 +15,10 @@ export default function MainLayout() {
     setIsNavOpen(!isNavOpen);
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="w-full bg-black text-white">
       <Cursor isHovered={isCursorHovered} />
@@ -23,7 +27,7 @@ export default function MainLayout() {
       ) : (
         <button
           onClick={toggleNav}
-          className=" p-[16px] text-white fixed top-0 left-0 z-50"
+          className=" p-[16px] text-white fixed top-0 left-0 z-50 cursor-none"
         >
           <FaBars size={24} />
         </button>
