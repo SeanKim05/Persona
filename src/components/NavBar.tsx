@@ -12,7 +12,7 @@ function NavBar({ isNavOpen, toggleNav }: NavBarProps) {
 
   const navItems = [
     { label: "Home", path: "main" },
-    { label: "Me", path: "" },
+    { label: "Me", path: "me" },
     { label: "Career", path: "career" },
     { label: "Gallery", path: "" },
   ];

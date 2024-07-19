@@ -69,7 +69,7 @@
 }
 
 /* nav */
-.nav-container {
+/* .nav-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -82,5 +82,5 @@
 }
 
 .nav-closed {
-  margin-left: 72px; /* Adjusted to match the width of the NavBar */
-}
+  margin-left: 72px; 
+} */
