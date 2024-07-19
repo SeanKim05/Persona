@@ -42,10 +42,13 @@ const Career = () => {
             Photography
           </h2>
           <p
-            className="flexRowCenter pt-[16px] text-[18px]"
-            style={{ fontFamily: "bold" }}
+            className="flexRowCenter pt-[16px] text-[14px]"
+            style={{ fontFamily: "go" }}
           >
-            와 내용을 적어야 하는데 디자인이 정말 없어 보인다
+            와 내용을 적어야 하는데 디자인이 정말 없어 보인다 와 내용을 적어야
+            하는데
+            <br />와 내용을 적어야 하는데 디자인이 정말 없어 보인다 와 내용을
+            적어야 하는데
           </p>
         </div>
       </div>

@@ -4,22 +4,32 @@
 
 @font-face {
   font-family: mj;
-  src: url("./assets/fonts/ChosunSm.TTF");
+  src: url("./assets/fonts/NanumMyeongjo.otf");
 }
 
 @font-face {
   font-family: mjBold;
-  src: url("./assets/fonts/ChosunKm.TTF");
+  src: url("./assets/fonts/NanumMyeongjoBold.otf");
+}
+
+@font-face {
+  font-family: mjExBold;
+  src: url("./assets/fonts/NanumMyeongjoExtraBold.otf");
+}
+
+@font-face {
+  font-family: goLight;
+  src: url("./assets/fonts/NanumSquareL.otf");
 }
 
 @font-face {
   font-family: go;
-  src: url("./assets/fonts/ChosunSg.TTF");
+  src: url("./assets/fonts/NanumSquareR.otf");
 }
 
 @font-face {
   font-family: goBold;
-  src: url("./assets/fonts/ChosunKg.TTF");
+  src: url("./assets/fonts/NanumSquareB.otf");
 }
 
 /* customize CSS */

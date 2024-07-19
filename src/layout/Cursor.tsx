@@ -28,7 +28,7 @@ export default function Cursor({ isHovered }: { isHovered: boolean }) {
             top: 24,
             left: 24,
           }}
-          className="absolute pointer-events-none text-sm text-white"
+          className="absolute pointer-events-none text-sm text-white animate-fade-in"
         >
           Click
         </div>

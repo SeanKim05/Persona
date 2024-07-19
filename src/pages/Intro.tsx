@@ -103,17 +103,18 @@ export default function Intro() {
           {isTextShown && (
             <div
               style={{ fontFamily: "go" }}
-              className={`text-[16px] animate-letter-fade animate-slide-up`}
+              className={`text-[18px] animate-letter-fade animate-slide-up`}
             >
               <div>
                 <p>사회적으로 보여주기 위해 쓰는 가면을 벗고,</p>
                 <p>
                   지극히 사적인
-                  <span style={{ fontFamily: "mj" }}> 나의 영역으로</span> 가는
-                  공간 페르소나
+                  <span style={{ fontFamily: "mjExBold" }}> 나의 영역</span>
+                  으로 가는 공간 페르소나
                 </p>
               </div>
               <button
+                style={{ fontFamily: "goBold" }}
                 className="w-[160px] h-[60px] mt-5 p-1 border border-white text-[20px] hover:opacity-50 transition-opacity"
                 onClick={() => navigate("/main")}
               >
