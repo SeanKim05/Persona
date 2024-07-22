@@ -8,7 +8,7 @@
   }
 }
 
-@keyframes slideLeft19px {
+@keyframes slideLeft10px {
   0% {
     transform: translateX(0);
   }
@@ -39,13 +39,49 @@
   }
 }
 
+@-webkit-keyframes focus-in-expand-fwd {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-transform: translateZ(-800px);
+    transform: translateZ(-800px);
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-filter: blur(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+@keyframes focus-in-expand-fwd {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-transform: translateZ(-800px);
+    transform: translateZ(-800px);
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-filter: blur(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
 /* className */
 .animate-fade-in {
   animation: fadeIn 1s forwards;
 }
 
 .animate-text-move {
-  animation: slideLeft19px 1s forwards;
+  animation: slideLeft10px 1s forwards;
 }
 
 .animate-letter-fade {
@@ -68,19 +104,37 @@
   opacity: 0.5;
 }
 
-/* nav */
-/* .nav-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-  transition: all 0.3s;
+.animate-focus-in-expand-fwd {
+  -webkit-animation: focus-in-expand-fwd 1s ease-out forwards;
+  animation: focus-in-expand-fwd 1s ease-out forwards;
 }
 
-.nav-open {
-  margin-left: 0;
+@-webkit-keyframes scale-in-hor-center {
+  0% {
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+@keyframes scale-in-hor-center {
+  0% {
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    opacity: 1;
+  }
 }
 
-.nav-closed {
-  margin-left: 72px; 
-} */
+.animate-scale-in-hor-center {
+  -webkit-animation: scale-in-hor-center 0.5s ease-out forwards;
+  animation: scale-in-hor-center 0.5s ease-out forwards;
+}

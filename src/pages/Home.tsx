@@ -73,10 +73,10 @@ export default function Home() {
 
   return (
     <>
-      <div className="flexColumn h-screen text-[18px] animate-fade-in">
+      <div className="flexColumn h-screen w-[60%] text-[18px] animate-fade-in">
         <div className="w-full mb-[12px]">{localImgArr[randIdx].desc}</div>
         <img
-          className="w-[100%] h-[60%]"
+          className="w-[100%] h-[60%] animate-scale-in-hor-center fade-in"
           src={imageSrc}
           style={{
             opacity: isImgVisible ? 1 : 0,

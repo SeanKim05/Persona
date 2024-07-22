@@ -20,21 +20,26 @@ const Me = () => {
 
   const items = [
     {
+      title: "Hiker",
       className: "bg-[#333D51]",
       imageSrc: new URL(`../assets/img/me/me0.jpg`, import.meta.url).href,
       text: "abc",
     },
     {
+      title: "Runner",
+
       className: "bg-[#CBD0D8]",
       imageSrc: new URL(`../assets/img/me/me1.jpg`, import.meta.url).href,
       text: "abc",
     },
     {
+      title: "Travler",
       className: "bg-[#F4F4EA] text-black",
       imageSrc: new URL(`../assets/img/me/me2.jpg`, import.meta.url).href,
       text: "abc",
     },
     {
+      title: "Photograper",
       className: "bg-[#D3AC2B] text-black",
       imageSrc: new URL(`../assets/img/me/me3.jpg`, import.meta.url).href,
       text: "abc",
@@ -65,7 +70,7 @@ const Me = () => {
                 style={{ fontFamily: "mj" }}
                 className="absolute top-[10%] flex justify-center w-full text-[50px]"
               >
-                Photography
+                {item.title}
               </h2>
             </div>
             <div className={`flip-card-back bg-black`}>{item.text}</div>
