@@ -53,9 +53,9 @@ export default function Intro() {
   }, [hasScrolled, isTextShown]);
 
   return (
-    <div style={{ fontFamily: "mj", cursor: "default" }} className="bg-black">
+    <div style={{ cursor: "default" }} className="bg-black">
       {/* Slide 1 */}
-      <div className="flex flex-col justify-center items-center h-[95vh] text-[120px] text-white opacity-90 bg-intro">
+      <div className="flex flex-col justify-center items-center h-[95vh] text-[120px] text-white opacity-90 bg-intro font-mjBold">
         <h1 className="absolute animate-focus-in-expand-fwd fade-in">
           Persona
         </h1>
@@ -89,13 +89,19 @@ export default function Intro() {
             {isTextShown && <span className="animate-letter-fade">l</span>}
           </h1>
 
-          <div style={{ fontFamily: "go" }} className={`text-[16px] h-[50px]`}>
+          <div style={{ fontFamily: "go" }} className={`text-[16px] h-[100px]`}>
             {isTextShown && (
               <div className="animate-letter-fade animate-slide-up">
-                <p>사회적으로 보여주기 위해 쓰는 가면을 벗고,</p>
                 <p>
-                  지극히 사적인
-                  <span style={{ fontFamily: "goBold" }}> 나의 영역</span>
+                  심리학에서 페르소나는 개인이 사회적 상황에서 자신을 드러내는
+                  방식, 즉 사회적 가면을 의미,
+                </p>
+                <p className="mb-2">
+                  내면적 본질을 숨기고 외부 세계에 적응하기 위해 사용하는 일종의
+                  '가면'
+                </p>
+                <p className="text-[20px]">
+                  <span style={{ fontFamily: "goBold" }}>중요한 내용</span>
                   으로 가는 공간 페르소나
                 </p>
               </div>
