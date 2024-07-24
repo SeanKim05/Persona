@@ -40,7 +40,7 @@
   @apply flex flex-col items-center justify-center;
 }
 
-.custom-cursor {
+/* .custom-cursor {
   position: fixed;
   width: 24px;
   height: 24px;
@@ -53,7 +53,7 @@
 
 body {
   cursor: none;
-}
+} */
 
 /* styles.css */
 .flip-card {
